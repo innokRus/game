@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Змейка - Игра</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🐍 Змейка INNOK</h1>
+            <div class="score-board">
+                <div class="score">Счёт: <span id="score">0</span></div>
+                <div class="high-score">Рекорд: <span id="highScore">0</span></div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div class="controls">
+                <div class="control-info">
+                    <p>Управление:</p>
+                    <p>↑ ↓ ← → или WASD</p>
+                </div>
+                <button id="startBtn" class="btn">Начать игру</button>
+                <button id="pauseBtn" class="btn" disabled>Пауза</button>
+                <button id="restartBtn" class="btn">Новая игра</button>
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <div class="game-over-content">
+                <h2>Игра окончена!</h2>
+                <p>Ваш счёт: <span id="finalScore">0</span></p>
+                <button id="playAgainBtn" class="btn">Играть снова</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
