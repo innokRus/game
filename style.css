@@ -72,6 +72,13 @@ body {
     width: 100%;
 }
 
+.controls-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .control-info {
     text-align: center;
     background: #333;
@@ -213,49 +220,18 @@ body {
 /* Адаптивность для мобильных устройств */
 @media (max-width: 600px) {
     .game-container {
-        margin: 10px;
-        padding: 20px;
+        margin: 5px;
+        padding: 15px;
         max-width: 100%;
     }
     
-    .header h1 {
-        font-size: 1.8rem;
-    }
-    
-    #gameCanvas {
-        width: 280px;
-        height: 280px;
-    }
-    
-    .score-board {
-        flex-direction: column;
-        gap: 10px;
-        font-size: 1rem;
-    }
-    
-    .mobile-controls {
-        display: flex;
-    }
-    
-    .control-info {
-        display: none;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        min-width: 100px;
-    }
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 400px) {
-    .game-container {
-        padding: 15px;
+    .header {
+        margin-bottom: 15px;
     }
     
     .header h1 {
         font-size: 1.5rem;
+        margin-bottom: 10px;
     }
     
     #gameCanvas {
@@ -263,9 +239,133 @@ body {
         height: 250px;
     }
     
+    .score-board {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .game-area {
+        gap: 15px;
+    }
+    
+    .controls {
+        gap: 10px;
+    }
+    
+    .controls-row {
+        gap: 8px;
+    }
+    
+    .mobile-controls {
+        display: flex;
+        margin-top: 10px;
+        gap: 5px;
+    }
+    
+    .control-info {
+        display: none;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 400px) {
+    .game-container {
+        margin: 2px;
+        padding: 10px;
+    }
+    
+    .header {
+        margin-bottom: 10px;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    
+    #gameCanvas {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .score-board {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .game-area {
+        gap: 10px;
+    }
+    
+    .controls {
+        gap: 8px;
+    }
+    
+    .controls-row {
+        gap: 6px;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        min-width: 70px;
+    }
+    
     .control-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .mobile-controls {
+        gap: 3px;
+        margin-top: 8px;
+    }
+}
+
+/* Для экстремально маленьких экранов */
+@media (max-width: 320px) {
+    .game-container {
+        margin: 1px;
+        padding: 8px;
+    }
+    
+    .header h1 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    #gameCanvas {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .score-board {
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+    
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        min-width: 60px;
+    }
+    
+    .controls-row {
+        gap: 4px;
+    }
+    
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
     }
 } 
