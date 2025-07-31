@@ -2,7 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
     <title>Змейка - Игра</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,6 +31,20 @@
                 <button id="startBtn" class="btn">Начать игру</button>
                 <button id="pauseBtn" class="btn" disabled>Пауза</button>
                 <button id="restartBtn" class="btn">Новая игра</button>
+                
+                <!-- Мобильные кнопки управления -->
+                <div class="mobile-controls" id="mobileControls">
+                    <div class="control-row">
+                        <button class="control-btn up-btn" id="upBtn">↑</button>
+                    </div>
+                    <div class="control-row">
+                        <button class="control-btn left-btn" id="leftBtn">←</button>
+                        <button class="control-btn right-btn" id="rightBtn">→</button>
+                    </div>
+                    <div class="control-row">
+                        <button class="control-btn down-btn" id="downBtn">↓</button>
+                    </div>
+                </div>
             </div>
         </div>
         

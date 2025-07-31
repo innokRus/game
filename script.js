@@ -32,6 +32,12 @@ class SnakeGame {
         this.finalScoreElement = document.getElementById('finalScore');
         this.playAgainBtn = document.getElementById('playAgainBtn');
         
+        // Мобильные кнопки управления
+        this.upBtn = document.getElementById('upBtn');
+        this.downBtn = document.getElementById('downBtn');
+        this.leftBtn = document.getElementById('leftBtn');
+        this.rightBtn = document.getElementById('rightBtn');
+        
         this.initializeEventListeners();
         this.updateScoreDisplay();
         this.draw();
@@ -46,6 +52,19 @@ class SnakeGame {
         
         // Управление клавиатурой
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+        
+        // Мобильные кнопки управления
+        this.upBtn.addEventListener('click', () => this.handleMobileControl('up'));
+        this.downBtn.addEventListener('click', () => this.handleMobileControl('down'));
+        this.leftBtn.addEventListener('click', () => this.handleMobileControl('left'));
+        this.rightBtn.addEventListener('click', () => this.handleMobileControl('right'));
+        
+        // Предотвращение зума на мобильных устройствах
+        document.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
         
         // Скрытие окна окончания игры при клике вне его
         this.gameOverElement.addEventListener('click', (e) => {
@@ -93,6 +112,38 @@ class SnakeGame {
             case ' ':
                 e.preventDefault();
                 this.togglePause();
+                break;
+        }
+    }
+    
+    handleMobileControl(direction) {
+        if (!this.gameRunning) return;
+        
+        // Предотвращение движения в противоположном направлении
+        switch(direction) {
+            case 'up':
+                if (this.dy !== 1) {
+                    this.dx = 0;
+                    this.dy = -1;
+                }
+                break;
+            case 'down':
+                if (this.dy !== -1) {
+                    this.dx = 0;
+                    this.dy = 1;
+                }
+                break;
+            case 'left':
+                if (this.dx !== 1) {
+                    this.dx = -1;
+                    this.dy = 0;
+                }
+                break;
+            case 'right':
+                if (this.dx !== -1) {
+                    this.dx = 1;
+                    this.dy = 0;
+                }
                 break;
         }
     }
