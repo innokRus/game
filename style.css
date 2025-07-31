@@ -76,7 +76,8 @@ body {
     display: flex;
     gap: 10px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .control-info {
@@ -256,6 +257,7 @@ body {
     
     .controls-row {
         gap: 8px;
+        flex-wrap: nowrap;
     }
     
     .mobile-controls {
@@ -311,6 +313,7 @@ body {
     
     .controls-row {
         gap: 6px;
+        flex-wrap: nowrap;
     }
     
     .btn {
@@ -361,6 +364,7 @@ body {
     
     .controls-row {
         gap: 4px;
+        flex-wrap: nowrap;
     }
     
     .control-btn {
